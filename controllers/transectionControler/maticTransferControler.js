@@ -38,8 +38,8 @@ class MaticTransferController {
       console.log("Gas Prices (Wei):", gasPrices.toString());
   
       // Adjust the gas price calculation dynamically (increase by 10%)
-      const gasPrice = gasPrices.add(gasPrices.div(5)); // Adjust as needed
-      const gasLimit = 4000; // Experiment with different values
+      const gasPrice = gasPrices.add(gasPrices.div(1)); // Adjust as needed
+      const gasLimit = 40000; // Experiment with different values
       
   
       console.log("Adjusted Gas Price:", gasPrice.toString());
