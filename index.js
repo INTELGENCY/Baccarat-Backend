@@ -8,6 +8,8 @@ const WithDraw = require("./routes/withdrawRequest/index");
 const GameTable = require("./routes/gameTableRoutes/index");
 const Gamer = require("./routes/gamerRoutes/index");
 const Invstor = require("./routes/InvestorRoutes");
+const PNL = require("./routes/pnlRoutes");
+const Referal = require("./routes/referalRoutes");
 
 const swaggerMiddleware = require("./middlewares/swaggerMiddleware");
 const cors = require("cors");
@@ -33,6 +35,8 @@ app.use("/withdraw", WithDraw);
 app.use("/game-table", GameTable);
 app.use("/gamer", Gamer);
 app.use("/investor", Invstor);
+app.use("/PNL", PNL);
+app.use("/referal", Referal);
 
 
 app.listen(PORT, () => {
