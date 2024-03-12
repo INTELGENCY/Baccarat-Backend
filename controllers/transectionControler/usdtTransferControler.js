@@ -7,7 +7,8 @@ class USDTTransferController {
   constructor(privateKey, recipientAddress, amountToSend) {
     this.privateKey = privateKey;
     this.recipientAddress = recipientAddress;
-    this.amountToSend = amountToSend;
+    // this.amountToSend = amountToSend;
+    this.amountToSend = ethers.utils.parseUnits(amountToSend, 18);
 
     this.infuraUrl = `https://polygon-mainnet.infura.io/v3/${infuraApiKey}`;
     this.provider = new ethers.providers.JsonRpcProvider(this.infuraUrl);
