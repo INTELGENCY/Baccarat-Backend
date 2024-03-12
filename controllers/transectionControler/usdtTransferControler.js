@@ -5,6 +5,7 @@ const ethers = require("ethers");
 
 class USDTTransferController {
   constructor(privateKey, recipientAddress, amountToSend) {
+    console.log("amountToSend:", amountToSend);
     this.privateKey = privateKey;
     this.recipientAddress = recipientAddress;
     // this.amountToSend = amountToSend;
