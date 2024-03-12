@@ -1,6 +1,7 @@
 const usdtABI = require("../../contractAbi/USDT.json");
 const USDTAddress = process.env.USDT_CONTRACT_ADDRESS;
 const infuraApiKey = process.env.Infura_Private_Key;
+const ethers = require("ethers");
 
 class USDTTransferController {
   constructor(privateKey, recipientAddress, amountToSend) {
