@@ -5,7 +5,6 @@ const ethers = require("ethers");
 
 class USDTTransferController {
   constructor(privateKey, recipientAddress, amountToSend) {
-    console.log("amountToSend:", amountToSend);
     this.privateKey = privateKey;
     this.recipientAddress = recipientAddress;
     // this.amountToSend = amountToSend;
@@ -15,6 +14,8 @@ class USDTTransferController {
     this.provider = new ethers.providers.JsonRpcProvider(this.infuraUrl);
     this.wallet = new ethers.Wallet(privateKey, this.provider);
     this.tokenContract = new ethers.Contract(USDTAddress, usdtABI, this.wallet);
+    console.log("amountToSend:", amountToSend);
+    console.log("wallet:", wallet);
   }
 
   async checkBalance() {
