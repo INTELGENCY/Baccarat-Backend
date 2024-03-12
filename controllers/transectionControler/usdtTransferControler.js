@@ -15,7 +15,7 @@ class USDTTransferController {
     this.wallet = new ethers.Wallet(privateKey, this.provider);
     this.tokenContract = new ethers.Contract(USDTAddress, usdtABI, this.wallet);
     console.log("amountToSend:", amountToSend);
-    console.log("wallet:", wallet);
+    console.log("wallet:", this.wallet);
   }
 
   async checkBalance() {
