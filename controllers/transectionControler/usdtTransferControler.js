@@ -15,7 +15,6 @@ class USDTTransferController {
     this.wallet = new ethers.Wallet(privateKey, this.provider);
     this.tokenContract = new ethers.Contract(USDTAddress, usdtABI, this.wallet);
     console.log("amountToSend:", amountToSend);
-    console.log("wallet:", this.wallet);
   }
 
   async checkBalance() {
@@ -45,6 +44,8 @@ class USDTTransferController {
       const usdtBalance = await this.tokenContract.balanceOf(
         this.wallet.address
       );
+      console.log("usdtBalance:", usdtBalance);
+      console.log("amountToSendWEI:", amountToSend);
       if (usdtBalance.lt(this.amountToSend)) {
         throw new Error(
           "Insufficient USDT funds for the transaction. Please add more USDT tokens."
