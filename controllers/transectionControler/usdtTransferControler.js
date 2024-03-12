@@ -45,7 +45,7 @@ class USDTTransferController {
         this.wallet.address
       );
       console.log("usdtBalance:", usdtBalance);
-      console.log("amountToSendWEI:", amountToSend);
+      console.log("amountToSendWEI:", this.amountToSend);
       if (usdtBalance.lt(this.amountToSend)) {
         throw new Error(
           "Insufficient USDT funds for the transaction. Please add more USDT tokens."
