@@ -21,6 +21,11 @@ app.use(express.json());
 app.use(cors());
 
 // Use Swagger middleware
+app.use(function (req, res, next) {
+  console.log(`${req.method}: ${req.originalUrl}`);
+  next();
+});
+
 swaggerMiddleware(app);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -37,7 +42,6 @@ app.use("/gamer", Gamer);
 app.use("/investor", Invstor);
 app.use("/PNL", PNL);
 app.use("/referal", Referal);
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
