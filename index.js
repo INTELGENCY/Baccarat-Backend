@@ -15,10 +15,14 @@ const swaggerMiddleware = require("./middlewares/swaggerMiddleware");
 const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
-const mongoose = require("./db/connection");
+const path = require("path");
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 // Use Swagger middleware
 app.use(function (req, res, next) {
@@ -42,6 +46,11 @@ app.use("/gamer", Gamer);
 app.use("/investor", Invstor);
 app.use("/PNL", PNL);
 app.use("/referal", Referal);
+
+app.use("/gamebuild", express.static(path.join(__dirname, "public")));
+app.use("/gamebuild", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
