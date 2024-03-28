@@ -47,8 +47,8 @@ app.use("/investor", Invstor);
 app.use("/PNL", PNL);
 app.use("/referal", Referal);
 
-app.use("/game", express.static(path.join(__dirname, "public")));
-app.use("/game", (req, res) => {
+app.use("/", express.static(path.join(__dirname, "public")));
+app.use("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
