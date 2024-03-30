@@ -45,7 +45,7 @@ const buyShares = async (
   const SharewithCost = sharesToBuy * 1 * 1000000;
 
   const gasPrices = await provider.getGasPrice();
-  const gasPrice = gasPrices.mul(10);
+  const gasPrice = gasPrices.mul(2);
 
   const nonce = await provider.getTransactionCount(wallet.address);
   const gasLimit = 300000;
@@ -151,7 +151,6 @@ const buyTableShares = async (req, res) => {
 
     const wallet = createWallet(private_Key);
     const tokenContract = getTokenContract(wallet);
-
     const gameTable = await ContractGameTable.findOne({ _id: table_ID });
 
     if (!gameTable) {

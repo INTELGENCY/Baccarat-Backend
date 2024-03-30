@@ -34,7 +34,7 @@ class WithdrawalRequestController {
         address,
         withdrawGameCoins,
         date: new Date(),
-        status,
+        status: "pending",
       });
       await withdrawalRequest.save();
 
