@@ -48,6 +48,16 @@ app.use("/PNL", PNL);
 app.use("/referal", Referal);
 
 
+
+// game build
+app.use("/", express.static(path.join(__dirname, "public")));
+// render game build
+
+app.use("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
+
+
 // admin panel
 app.use("/adminpanel", express.static(path.join(__dirname, "AdminPortal/out")));
 
@@ -55,14 +65,7 @@ app.use("/adminpanel", express.static(path.join(__dirname, "AdminPortal/out")));
 app.use("/adminpanel", (req, res) => {
   res.sendFile(path.join(__dirname, "AdminPortal/out/index.html"));
 });
-// render game build
 
-// game build
-app.use("/", express.static(path.join(__dirname, "public")));
-app.use("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
-// 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
