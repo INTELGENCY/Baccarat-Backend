@@ -80,8 +80,7 @@ function ResponsiveAppBar({ account, pages, pageLinks }) {
                     variant="text"
                     key={page}
                     onClick={(e) => {
-                      const url =
-                        pageLinks[index] == "" ? "" : `/${pageLinks[index]}`;
+                      const url = `/${pageLinks[index]}`;
                       router.push(url);
                       handleCloseNavMenu();
                     }}
@@ -107,8 +106,7 @@ function ResponsiveAppBar({ account, pages, pageLinks }) {
               sx={{ color: "black" }}
               key={page}
               onClick={(e) => {
-                const url =
-                  pageLinks[index] == "" ? "" : `/${pageLinks[index]}`;
+                const url = `/${pageLinks[index]}`;
                 router.push(url);
                 handleCloseNavMenu();
               }}
