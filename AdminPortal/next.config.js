@@ -7,6 +7,6 @@ module.exports = {
     config.plugins.push(new (require("dotenv-webpack"))());
     return config;
   },
-  basePath:"/adminpanel"
+  basePath: "/adminpanel",
   // Other configurations go here
 };
