@@ -52,13 +52,13 @@ app.use("/", express.static(path.join(__dirname, "public")));
 // admin panel
 app.use("/adminpanel", express.static(path.join(__dirname, "AdminPortal/out")));
 
-// render game build
-app.use("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
 // render admin panel
 app.use("/adminpanel", (req, res) => {
   res.sendFile(path.join(__dirname, "AdminPortal/out/index.html"));
+});
+// render game build
+app.use("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 app.listen(PORT, () => {

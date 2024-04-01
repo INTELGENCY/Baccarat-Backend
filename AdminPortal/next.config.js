@@ -10,4 +10,3 @@ module.exports = {
   basePath:"/adminpanel"
   // Other configurations go here
 };
-// 
