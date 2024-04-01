@@ -21,5 +21,14 @@ Used to set the network: https://chainlist.org/
 25 Cronos Mainnet Beta
 338 Cronos Testnet
 */
-
 window.web3ChainId = 137;
+
+window.networks = [
+  {
+    id: 137,
+    label: "Matic",
+    token: "MATIC",
+    rpcUrl: "https://rpc-mainnet.maticvigil.com/",
+  },
+];
+
