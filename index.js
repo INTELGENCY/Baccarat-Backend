@@ -51,16 +51,14 @@ app.use("/referal", Referal);
 
 // game build
 app.use("/", express.static(path.join(__dirname, "public")));
-// render game build
-
-app.use("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
-
-
 // admin panel
 app.use("/adminpanel", express.static(path.join(__dirname, "AdminPortal/out")));
 
+
+// render game build
+app.use("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 // render admin panel
 app.use("/adminpanel", (req, res) => {
   res.sendFile(path.join(__dirname, "AdminPortal/out/index.html"));
