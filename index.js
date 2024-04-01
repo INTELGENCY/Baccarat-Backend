@@ -47,8 +47,7 @@ app.use("/investor", Invstor);
 app.use("/PNL", PNL);
 app.use("/referal", Referal);
 
-// game build
-app.use("/", express.static(path.join(__dirname, "public")));
+
 // admin panel
 app.use("/adminpanel", express.static(path.join(__dirname, "AdminPortal/out")));
 
@@ -57,6 +56,9 @@ app.use("/adminpanel", (req, res) => {
   res.sendFile(path.join(__dirname, "AdminPortal/out/index.html"));
 });
 // render game build
+
+// game build
+app.use("/", express.static(path.join(__dirname, "public")));
 app.use("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
